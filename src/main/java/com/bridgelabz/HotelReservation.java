@@ -14,7 +14,10 @@ public class HotelReservation {
         System.out.println("Welcome to the Hotel Reservation System");
         HotelReservation obj = new HotelReservation();
         obj.addHotel();
-        obj.enterDates();
+        obj.findCheapestHotel("2020-09-10", "2020-09-11");
+
+
+        //obj.enterDates();
     }
 
     /**
@@ -32,13 +35,13 @@ public class HotelReservation {
     /**
      * Method for inputting the dates from user
      */
-    public void enterDates() {
+   /* public void enterDates() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the 2 dates in yyyymmdd format: ");
         String date1 = sc.nextLine();
         String date2 = sc.nextLine();
         findCheapestHotel(date1, date2);
-    }
+    }*/
 
     /**
      * Method for finding the cheapest Hotel for given dates
@@ -54,5 +57,6 @@ public class HotelReservation {
         List<Hotel> hotelObjList = hotelReservation.values().stream().sorted(Comparator.comparing(Hotel -> Hotel.weekdayRate)).collect(Collectors.toList());
         System.out.println(" The cheapest hotel is " + hotelObjList.get(0).getHotelName() + ", Rating : " + hotelObjList.get(0).getRating() + ", Total Rates = $" + hotelObjList.get(0).getWeekdayRate() * 2);
         return (hotelObjList.get(0).getWeekdayRate() * 2);
+
     }
 }
