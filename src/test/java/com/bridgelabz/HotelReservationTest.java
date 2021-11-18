@@ -34,5 +34,11 @@ public class HotelReservationTest  {
         obj.addHotel();
         Assert.assertEquals(200, obj.findCheapestHotel("2020-09-11", "2020-09-12"));
     }
+    @Test
+    public void givenDateRangeShouldReturnTheCheapestHotelRate2() {
+        HotelReservation obj = new HotelReservation();
+        obj.addHotel();
+        Assert.assertEquals(5, obj.hotelReservation.get("Ridgewood").getRating());
+    }
 
 }
