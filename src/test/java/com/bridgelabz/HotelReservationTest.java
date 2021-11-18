@@ -28,4 +28,11 @@ public class HotelReservationTest  {
         Assert.assertEquals(50, obj.hotelReservation.get("Bridgewood").getWeekendRate());
         Assert.assertEquals(150, obj.hotelReservation.get("Ridgewood").getWeekendRate());
     }
+    @Test
+    public void givenDateRangeShouldReturnTheCheapestHotelRate1() {
+        HotelReservation obj = new HotelReservation();
+        obj.addHotel();
+        Assert.assertEquals(200, obj.findCheapestHotel("2020-09-11", "2020-09-12"));
+    }
+
 }
